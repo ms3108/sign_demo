@@ -3,4 +3,5 @@ Flask-SocketIO
 opencv-python
 mediapipe
 numpy
+gunicorn
 
