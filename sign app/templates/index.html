@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Language Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+</head>
+<body>
+    <h1>Sign Language Detection</h1>
+    <div id="prediction">Waiting for prediction...</div>
+    <script>
+        var socket = io();
+        socket.on('prediction', function(data) {
+            document.getElementById('prediction').innerText = 'Predicted Character: ' + data.character;
+        });
+    </script>
+</body>
+</html>
